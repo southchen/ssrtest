@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="UTF-8" />
+    <title>学业报告单</title>
+  </head>
+  <style>
+    @page {
+      margin: 10px;
+    }
+
+    td,
+    thead {
+      page-break-inside: avoid !important;
+    }
+    @media print {
+      .sz-report-sheet td {
+        page-break-inside: avoid !important;
+      }
+    }
+    .sz-report-sheet {
+      font-family: 'Noto Sans CJK SC', sans-serif;
+      color: #060c19;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+    }
+
+    .sz-report-sheet h1 {
+      margin: auto;
+      height: 90px;
+      line-height: 90px;
+      padding: 0;
+      font-size: 24px;
+      font-weight: 600;
+      border: 1px rgba(50, 56, 66, 0.1) solid;
+      border-bottom: none;
+    }
+
+    .sz-report-sheet table {
+      border-collapse: collapse;
+      margin: auto;
+      width: 100%;
+    }
+
+    .sz-report-sheet thead tr td {
+      font-weight: 600;
+      background-color: rgb(236, 244, 255);
+    }
+
+    .sz-report-sheet tr td {
+      border: 1px rgba(50, 56, 66, 0.1) solid;
+      font-weight: 400;
+      padding: 5px 5px;
+    }
+
+    .sz-report-sheet tfoot tr {
+      height: 120px;
+    }
+    .sz-report-sheet .title {
+      background-color: #f5f9ff;
+    }
+    .sz-report-sheet .border {
+      border: 1px rgba(50, 56, 66, 0.1) solid;
+    }
+    .sz-report-sheet .block {
+      background-color: #f5f9ff;
+      flex: 1;
+      border-radius: 6%;
+      margin: 16px 8px;
+      max-width: 199px;
+      min-width: 100px;
+    }
+    .sz-report-sheet .flex-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .sz-report-sheet .block .score {
+      font-size: 20px;
+      font-weight: 600;
+      max-width: 199px;
+      height: 55px;
+      padding: 5px 0 0 0;
+    }
+    .sz-report-sheet .block .score .item {
+      font-size: 12px;
+      display: block;
+      font-weight: 400;
+    }
+    body {
+      font-size: 13px;
+    }
+  </style>
+  <body>
+    <div class="sz-report-sheet">
+      <div class="border"><h2>深圳中学学生总学业报告单</h2></div>
+
+      <div
+        class="border flex-wrapper"
+        style="border-top: none; border-bottom: none"
+      >
+        <div class="block">
+          <div class="score">
+            108 <br /><span class="item">获得总学分</span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="score">81 <br /><span class="item">有绩点学分</span></div>
+        </div>
+        <div class="block">
+          <div class="score">
+            27 <br /><span class="item">合格认定学分</span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="score">
+            285 <br />
+            <span class="item">总学分绩点</span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="score">
+            3.52 <br />
+            <span class="item">平均学分绩点</span>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <td style="width: 10.84%" colspan="2">姓名</td>
+            <td style="width: 32.42%" colspan="2">出国学生1</td>
+            <td style="width: 18.76%" colspan="2">学号</td>
+            <td style="width: 37.98%" colspan="6">09130037</td>
+          </tr>
+          <tr>
+            <td style="width: 5.42%">领域</td>
+            <td>科目</td>
+            <td>课程</td>
+            <td>模块</td>
+            <td>课程类型</td>
+            <td>修习阶段</td>
+
+            <td style="width: 7.25%">模块综合分</td>
+            <td style="width: 5.35%">模块综合等级</td>
+            <td style="width: 5.26%">获得学分</td>
+            <td style="width: 5.26%">模块综合等级值</td>
+            <td style="width: 5.26%">学分绩点</td>
+            <td style="width: 9.61%">任课教师</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="title" rowspan="4">语言与文学</td>
+            <td class="title" rowspan="2">语文</td>
+            <td>语文必修 1</td>
+            <td>汉语阅读与写作1</td>
+            <td>必修</td>
+            <td>高一上</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td>语文必修2</td>
+            <td>汉语阅读与写作2</td>
+            <td>必修</td>
+            <td>高一下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="2">英语</td>
+            <td>英语必修1</td>
+            <td>英语水平1</td>
+            <td>必修</td>
+            <td>高一上</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td>英语必修2</td>
+            <td>英语水平2</td>
+            <td>必修</td>
+            <td>高一下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="2">数学</td>
+            <td class="title" rowspan="2">数学</td>
+            <td>数学必修 1</td>
+            <td>代数1</td>
+            <td>必修</td>
+            <td>高一上</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td>数学必修 2</td>
+            <td>代数1</td>
+            <td>必修</td>
+            <td>高一下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="3">科学</td>
+            <td class="title" rowspan="1">物理</td>
+            <td>物理必修1</td>
+            <td>物理必修1</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="1">化学</td>
+            <td>化学必修1</td>
+            <td>化学必修1</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="1">生物</td>
+            <td>生物必修1</td>
+            <td>分子与细胞</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="3">人文与社会</td>
+            <td class="title" rowspan="1">思想政治</td>
+            <td>思想政治必修1</td>
+            <td>经济生活</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="1">历史</td>
+            <td>历史必修1</td>
+            <td>政治文明发展历程折行展示样式</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="1">地理</td>
+            <td>地理必修1</td>
+            <td>地理必修1</td>
+            <td>必修</td>
+            <td>高一上下</td>
+            <td>99</td>
+            <td>A</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="2">技术</td>
+            <td class="title" rowspan="1">信息技术</td>
+            <td>信息技术基础必修1</td>
+            <td>信息技术基础</td>
+            <td>必修</td>
+            <td>高一上</td>
+            <td>89</td>
+            <td>B</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>深老师</td>
+          </tr>
+          <tr>
+            <td class="title" rowspan="1">通用技术</td>
+            <td>通用技术必修1</td>
+            <td>技术与设计1</td>
+            <td>必修</td>
+            <td>高一上</td>
+            <td>50.7</td>
+            <td>不合格</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>深老师</td>
+          </tr>
+        </tbody>
+
+        <tr>
+          <td colspan="9" style="height: 80px">
+            <div style="display: inline-block; margin: 20px">
+              2020-2021学年第一学期评语：这个学期的成绩单不错，稳中有升，继续加油。
+            </div>
+          </td>
+          <td colspan="3">评语老师：姚卉</td>
+        </tr>
+        <tr>
+          <td colspan="9" style="height: 80px">
+            <div style="display: inline-block; margin: 20px">
+              2020-2021学年第二学期评语：该生学习态度端正，学习认真，字习成绩进明显，望继续
+              保持努力。
+            </div>
+          </td>
+          <td colspan="3">评语老师：金春来</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

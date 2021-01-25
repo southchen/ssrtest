@@ -1,11 +1,30 @@
+<?php
+
+declare(strict_types=1);
+
+use phpapi\components\session\Reflection;
+use phpapi\sdks\scms\klass\models\AdminClass;
+
+/**
+ * @var Reflection $owner
+ * @var array $grade_10_academic_cources
+ * @var array $grade_10_non_academic_cources
+ * @var array $grade_10_academic_cources_statis
+ * @var array $grade_10_non_academic_cources_statis
+ * @var array $owner_statis
+ * @var array $admin_class_ext_fields
+ * @var array $owner_ext_fields
+ * @var bool $downloading
+ */
+
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>出国报告单</title>
   </head>
-  <body>
-    <style>
+  <style>
       @page {
         margin: 30px 6px 20px 6px;
         size: A4;
@@ -161,11 +180,12 @@
       }
       .footer-credit {
         margin-top: 20px;
-        display: flex;
-        justify-content: space-around;
+        text-align: left;
+        
       }
       .footer-credit b {
         display: inline-flex;
+        margin-left:80px;
       }
 
       @page {
@@ -179,7 +199,7 @@
         string-set: id content();
       }
     </style>
-
+  <body>
     <div class="sz-report-sheet-aborad-cover">
       <div class="logo">
         <img
@@ -3115,23 +3135,23 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
       <table class="personal-info">
         <tr>
           <td>Name:</td>
-          <td id="sz-student-name">LIAN Xu</td>
+          <td id="sz-student-name"><?= $owner['pinyin'] ?></td>
         </tr>
         <tr>
           <td>Gender:</td>
-          <td>Male</td>
+          <td><?= $owner['gender'] === 'm' ? 'Male' : 'Female' ?></td>
         </tr>
         <tr>
           <td>Student ID:</td>
-          <td id="sz-student-id">2019530098</td>
+          <td id="sz-student-id"><?= $owner['usin'] ?></td>
         </tr>
         <tr>
           <td>Birthday:</td>
-          <td>2004-07-15</td>
+          <td></td>
         </tr>
         <tr>
           <td>Enrollment Date:</td>
-          <td>2019-09-01</td>
+          <td><?= $owner['entered_on'] ?? '' ?></td>
         </tr>
 
         <tr>
@@ -3139,12 +3159,18 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
         </tr>
         <tr>
           <td>10 th Grade:</td>
-          <td>International Department</td>
+          <td>
+          <?=
+            isset($owner['admin_class'][$admin_class_ext_fields['方向']])
+            ? ($owner['admin_class'][$admin_class_ext_fields['方向']] === '高考方向' ? 'National Department' : 'International Department')
+            : ''
+          ?>
+          </td>
         </tr>
 
         <tr>
           <td>11 th Grade:</td>
-          <td>International Department</td>
+          <td></td>
         </tr>
         <tr>
           <td>12 th Grade:</td>
@@ -3153,19 +3179,19 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
 
         <tr>
           <td>Graduation Date:</td>
-          <td>2022-07-11</td>
+          <td><?= $owner[$owner_ext_fields['毕业时间']] ?? '' ?></td>
         </tr>
         <tr>
           <td>Total Credits:</td>
-          <td>75</td>
+          <td><?= $owner_statis['total_credit'] ?></td>
         </tr>
         <tr>
           <td>Cumulative GPA/Potential GPA:</td>
-          <td>4.25/4.31</td>
+          <td><?= $owner_statis['avg_credit_gpa'] ?>/<?= $owner_statis['avg_full_credit_gpa'] ?></td>
         </tr>
         <tr>
           <td>Date of issue:</td>
-          <td>2020-11-05</td>
+          <td><?= date('Y-m-d') ?></td>
         </tr>
       </table>
 
@@ -3183,7 +3209,7 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
             <tr>
               <td colspan="4">International Department</td>
               <td colspan="2">National Department</td>
-              <td colspan="1" rowspan="2">Non-Academic Courses</td>
+              <td colspan="1" rowspan="2">Non-academic Courses</td>
             </tr>
             <tr>
               <td>AP</td>
@@ -3275,183 +3301,30 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
             <th>Credits Awarded</th>
             <th>Grade Points</th>
           </tr>
+          <?php $maxRows = count($grade_10_academic_cources[0] ?? []) > count($grade_10_academic_cources[1] ?? []) ? count($grade_10_academic_cources[0] ?? []) : count($grade_10_academic_cources[1] ?? []) ?>
+          <?php for ($i = 0; $i < $maxRows; $i++): ?>
           <tr>
-            <td>Chinese</td>
-            <td>Chinese Literature and Composition1</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Chinese</td>
-            <td>Chinese Literature and Composition3</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
+            <td><?= $grade_10_academic_cources[0][$i]['class']['ext_subject'] ?? '' ?></td>
+            <td><?= $grade_10_academic_cources[0][$i]['class']['name'] ?? '' ?></td>
+            <td><?= $grade_10_academic_cources[0][$i]['grade']['level'] ?? '' ?></td>
+            <td><?= isset($grade_10_academic_cources[0]) && $grade_10_academic_cources[0][$i]['grade']['is_published'] ? ($grade_10_academic_cources[0][$i]['grade']['credit'] ?? 0) : '' ?></td>
+            <td><?= isset($grade_10_academic_cources[0]) && $grade_10_academic_cources[0][$i]['grade']['is_published'] ? ($grade_10_academic_cources[0][$i]['grade']['credit'] ?? 0) : '' ?></td>
+            <td><?= $grade_10_academic_cources[1][$i]['class']['ext_subject'] ?? '' ?></td>
+            <td><?= $grade_10_academic_cources[1][$i]['class']['name'] ?? '' ?></td>
+            <td><?= $grade_10_academic_cources[1][$i]['grade']['level'] ?? '' ?></td>
+            <td><?= isset($grade_10_academic_cources[1]) && $grade_10_academic_cources[1][$i]['grade']['is_published'] ? ($grade_10_academic_cources[1][$i]['grade']['credit'] ?? 0) : '' ?></td>
+            <td><?= isset($grade_10_academic_cources[1]) && $grade_10_academic_cources[1][$i]['grade']['is_published'] ? ($grade_10_academic_cources[1][$i]['grade']['gpa'] ?? 0) : '' ?></td>
           </tr>
+          <?php endfor; ?>
           <tr>
-            <td>Chinese</td>
-            <td>Chinese Literature and Composition2</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Chinese</td>
-            <td>Chinese Literature and Composition4</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Math</td>
-            <td>Algebra 1</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Math</td>
-            <td>Geometry</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Math</td>
-            <td>Trigonometry</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Math</td>
-            <td>Algebra2</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>History</td>
-            <td>History of Politics Development</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Chemistry</td>
-            <td>Chemistry Foundation2</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Chemistry</td>
-            <td>Chemistry Foundation1</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Biology</td>
-            <td>Molecules and Cells</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>IT</td>
-            <td>Foundations ofIT</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>Biology</td>
-            <td>Stability and the Environment dsfdfsdfd sdfsdfdsf sdfsdfs</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>PE</td>
-            <td>Martial Art</td>
-            <td>A</td>
-            <td>1</td>
-            <td>4</td>
-            <td>IT</td>
-            <td>Algorithms and Programming</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>PE</td>
-            <td>Track and Field</td>
-            <td>A</td>
-            <td>1</td>
-            <td>4</td>
-            <td>Social Practice</td>
-            <td>Social Research 1</td>
-            <td>A</td>
-            <td>5</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td>International</td>
-            <td>CoHegesRiesearch and</td>
-            <td>A</td>
-            <td>2</td>
-            <td>9</td>
-            <td>International</td>
-            <td>Physics Olympiad2- Electricity and Magnetism</td>
-            <td>A</td>
-            <td>4</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td>International</td>
-            <td>Physics Olympiad 1- Mechanics</td>
-            <td>A</td>
-            <td>4</td>
-            <td>20</td>
-            <td>International</td>
-            <td>AP Physics 1(1-2)</td>
-            <td>A</td>
-            <td>3</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>International</td>
-            <td>Pre-AP English Languange&amp; Composition 1-1</td>
-            <td>B</td>
-            <td>4</td>
-            <td>14</td>
-            <td>International</td>
-            <td>Pre-AP English Language &amp; Composition1-2</td>
-            <td>A</td>
-            <td>4</td>
-            <td>18</td>
-          </tr>
-          <tr>
-            <td>International</td>
-            <td>Public Speaking1-1</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8</td>
-            <td>SchoolBased</td>
-            <td>College Research and Composition1-2</td>
-            <td>A</td>
-            <td>2</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <td>International</td>
-            <td>AP Physics 1(1-1)</td>
-            <td>A</td>
-            <td>3</td>
-            <td>15</td>
-            <td>SchoolBased</td>
-            <td>Academic Reading and Writing</td>
-            <td>A</td>
-            <td>2</td>
-            <td>8.5</td>
-          </tr>
-          <tr>
-            <th colspan="5">Semester GPA:4.1</th>
-            <th colspan="5">Semester GPA:4.15</th>
+            <th colspan="5">Semester GPA: <?= $grade_10_academic_cources_statis[0]['avg_credit_gpa'] ?? 0 ?></th>
+            <th colspan="5">Semester GPA: <?= $grade_10_academic_cources_statis[1]['avg_credit_gpa'] ?? 0 ?></th>
           </tr>
         </table>
 
         <table class="non-academic" style="margin-top: 20px; width: 100%">
           <thead>
-            <td colspan="8">Grade 10 - Non Academic Course</td>
+            <td colspan="8">Grade 10 - Non-academic Course</td>
           </thead>
           <tr>
             <th colspan="4">The First Semester</th>
@@ -3467,22 +3340,38 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
             <th>Grade</th>
             <th>Credit</th>
           </tr>
+          <?php $maxRows = count($grade_10_non_academic_cources[0] ?? []) > count($grade_10_non_academic_cources[1] ?? [])
+            ? count($grade_10_non_academic_cources[0] ?? [])
+            : count($grade_10_non_academic_cources[1] ?? []);
+            $passStatusMap = ['passed' => 'Pass', 'failed' => 'Fail'];
+          ?>
+          <?php for ($i = 0; $i < $maxRows; $i++): ?>
           <tr>
-            <td>Music</td>
-            <td>Music Appreciation</td>
-            <td>Pass</td>
-            <td>2</td>
-            <td>PE</td>
-            <td>Badminton</td>
-            <td>Pass</td>
-            <td>1</td>
+            <td><?= $grade_10_non_academic_cources[0][$i]['class']['ext_subject'] ?? '' ?></td>
+            <td><?= $grade_10_non_academic_cources[0][$i]['class']['name'] ?? '' ?></td>
+            <td>
+            <?=
+              in_array($grade_10_non_academic_cources[0][$i]['grade']['pass_status'] ?? '', ['passed', 'failed'])
+              ? $passStatusMap[$grade_10_non_academic_cources[0][$i]['grade']['pass_status']]
+              : ''
+            ?>
+            </td>
+            <td><?= isset($grade_10_non_academic_cources[0]) && $grade_10_non_academic_cources[0][$i]['grade']['is_published'] ? ($grade_10_non_academic_cources[0][$i]['grade']['credit'] ?? 0) : '' ?></td>
+            <td><?= $grade_10_non_academic_cources[1][$i]['class']['ext_subject'] ?? '' ?></td>
+            <td><?= $grade_10_non_academic_cources[1][$i]['class']['name'] ?? '' ?></td>
+            <td>
+            <?=
+              in_array($grade_10_non_academic_cources[1][$i]['grade']['pass_status'] ?? '', ['passed', 'failed'])
+              ? $passStatusMap[$grade_10_non_academic_cources[1][$i]['grade']['pass_status']]
+              : ''
+            ?>
+            </td>
+            <td><?= isset($grade_10_non_academic_cources[1]) && $grade_10_non_academic_cources[1][$i]['grade']['is_published'] ? ($grade_10_non_academic_cources[1][$i]['grade']['credit'] ?? 0) : '' ?></td>
           </tr>
+          <?php endfor; ?>
         </table>
         <div class="footer-credit">
-          <b style="font-size: 16px; margin-right: 20px"
-            >Semester Credits : 6</b
-          >
-          <b style="font-size: 16px">Semester Credits : 4</b>
+          <b style="font-size: 16px; margin-right: 20px">Semester Credits : <?= $grade_10_cources_statis['total_credit'] ?? '' ?></b>
         </div>
       </div>
 
@@ -3536,7 +3425,7 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
 
         <table class="non-academic" style="margin-top: 20px; width: 100%">
           <thead>
-            <td colspan="8">Grade 11 - Non Academic Course</td>
+            <td colspan="8">Grade 11 - Non-academic Course</td>
           </thead>
           <tr>
             <th colspan="4">The First Semester</th>
@@ -3555,9 +3444,8 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
         </table>
         <div class="footer-credit">
           <b style="font-size: 16px; margin-right: 20px"
-            >Semester Credits : 6</b
+            >Semester Credits : </b
           >
-          <b style="font-size: 16px">Semester Credits : 4</b>
         </div>
       </div>
 
@@ -3610,7 +3498,7 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
 
         <table class="non-academic" style="margin-top: 20px; width: 100%">
           <thead>
-            <td colspan="8">Grade 12 - Non Academic Course</td>
+            <td colspan="8">Grade 12 - Non-academic Course</td>
           </thead>
           <tr>
             <th colspan="4">The First Semester</th>
@@ -3627,11 +3515,8 @@ BAgQIECAAIFjAlIAx+gFJkCAAAECBAgQIECAAAECOwX+BVSptKJQi5grAAAAAElFTkSuQmCC"
             <th>Credit</th>
           </tr>
         </table>
-        <div class="footer-credit">
-          <b style="font-size: 16px; margin-right: 20px"
-            >Semester Credits : 6</b
-          >
-          <b style="font-size: 16px">Semester Credits : 4</b>
+        <div style="margin-top: 20px; text-align: start; margin-left: 120px">
+          <b style="font-size: 16px">Semester Credits : 0</b>
         </div>
       </div>
     </div>
