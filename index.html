@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>学业报告单</title>
   </head>
   <style>
@@ -66,15 +67,10 @@
     .sz-report-sheet .block {
       background-color: #f5f9ff;
       flex: 1;
-      height: 80px;
       border-radius: 6%;
-      margin: 8px;
+      margin: 16px 8px;
       max-width: 199px;
       min-width: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
     }
     .sz-report-sheet .flex-wrapper {
       display: flex;
@@ -85,20 +81,25 @@
       font-size: 20px;
       font-weight: 600;
       max-width: 199px;
+      height: 60px;
     }
     .sz-report-sheet .block .score .item {
       font-size: 12px;
       display: inline-block;
+      font-weight: 400;
     }
     body {
-      font-size: 12px;
+      font-size: 12.5px;
     }
   </style>
   <body>
     <div class="sz-report-sheet">
       <div class="border"><h2>深圳中学学生总学业报告单</h2></div>
 
-      <div class="border flex-wrapper" style="border-top: none">
+      <div
+        class="border flex-wrapper"
+        style="border-top: none; border-bottom: none"
+      >
         <div class="block">
           <div class="score">
             108 <br /><span class="item">获得总学分</span>
