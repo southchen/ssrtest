@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>学业报告单</title>
   </head>
   <style>
@@ -52,8 +53,7 @@
       height: 60px;
       border: 1px rgba(50, 56, 66, 0.1) solid;
       font-weight: 400;
-      font-size: 20px;
-      padding: 10pt;
+      padding: 5px 1px;
     }
 
     .sz-report-sheet tfoot tr {
@@ -72,7 +72,7 @@
       height: 80px;
       border-radius: 6%;
       margin: 16px;
-      max-width: 199px;
+      /* max-width: 199px; */
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -84,11 +84,12 @@
       justify-content: space-around;
     }
     .sz-report-sheet .block .score {
-      font-size: 28px;
+      font-size: 20px;
       font-weight: 600;
+      width: 200px;
     }
-    .sz-report-sheet .block .item {
-      font-size: 18px;
+    .sz-report-sheet .block .score .item {
+      font-size: 14px;
     }
   </style>
   <body>
@@ -97,20 +98,29 @@
 
       <div class="border flex-wrapper">
         <div class="block">
-          <span class="score">108</span>
-          <span class="item">获得总学分</span>
+          <div class="score">
+            108 <br /><span class="item">获得总学分</span>
+          </div>
         </div>
         <div class="block">
-          <span class="score">81</span> <span class="item">有绩点学分</span>
+          <div class="score">81 <br /><span class="item">有绩点学分</span></div>
         </div>
         <div class="block">
-          <span class="score">27</span> <span class="item">合格认定学分</span>
+          <div class="score">
+            27 <br /><span class="item">合格认定学分</span>
+          </div>
         </div>
         <div class="block">
-          <span class="score">285</span> <span class="item">总学分绩点</span>
+          <div class="score">
+            285 <br />
+            <span class="item">总学分绩点</span>
+          </div>
         </div>
         <div class="block">
-          <span class="score">3.52</span> <span class="item">平均学分绩点</span>
+          <div class="score">
+            3.52 <br />
+            <span class="item">平均学分绩点</span>
+          </div>
         </div>
       </div>
 
