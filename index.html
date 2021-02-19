@@ -28,11 +28,6 @@
         @top-right {
           content: '';
         }
-        @bottom-center {
-          box-sizing: border-box;
-          margin-bottom: 10px;
-          content: 'International Department courses are identified as "International" in the Subject column.';
-        }
       }
 
       @media print {
@@ -69,13 +64,16 @@
       .personal-info {
         width: 100%;
         border-spacing: 15px;
+        margin-top: 10px;
       }
       .personal-info td:first-of-type {
         text-align: right;
         margin-right: 10px;
         width: 50%;
       }
-      #rueles-caption {
+      .rules-table-caption {
+        text-align: center;
+        caption-side: top;
         white-space: nowrap;
       }
       .rules-table {
@@ -162,7 +160,10 @@
       .footer-credit {
         margin-top: 20px;
         text-align: left;
-        margin-left: 120px;
+      }
+      .footer-credit b {
+        display: inline-flex;
+        margin-left: 80px;
       }
 
       @page {
