@@ -10,390 +10,762 @@
     <style>
       .table {
         text-align: center;
+      
       }
-      .table td {
-        border: 1px solid black;
-      }
-      .table th{
-          border: 1px solid black;
-      }
+   
       .title {
         font-size: 20px;
         font-weight: 800;
       }
-      .engStudentInfo {
+      .chnStudentInfo {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        font-weight: 800;
-      }
-     
-      .summary{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        font-weight: 800;
-      }
-      .credits{
-        font-weight: 800;
-      }
-      .subject{
-        font-weight: 800;
       }
     </style>
-
     <table class="table" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="5" class="title">TRANSCRIPT</td>
+      <tr >
+        <td colspan="12" class="title">北京大学附属中学成绩单</td>
       </tr>
       <tr>
-        <td colspan="5" class="title">
-          THE AFFILIATED HIGH SCHOOL OF PEKING UNIVERSITY
+        <td colspan="12">
+          <span class="chnStudentInfo">
+            <span class="studentName">学生: 王乐轩 </span
+            ><span class="studentGender"> 性别: 男</span
+            ><span class="studentId"> 学号: 2221135</span
+            ><span class="studentBirthday"> 出生日期: 2003.12.03</span
+            ><span class="studentEnteredOn"> 入学时间: 2019.09</span
+            ><span class="studentGraduate">毕业时间: 2022.07</span></span
+          >
         </td>
       </tr>
       <tr>
-        <td colspan="5">
-          <span class="engStudentInfo">
-            <span>Name: Wang Lexuan </span><span> Gender: Male</span
-            ><span>Birthday: Dec.3rd 2003 </span><span>No.2221135</span>
-          </span>
-        </td>
+        <td class="className">课程名称</td>
+        <td class="classCsin">课程编号</td>
+        <td class="classDomain">领域</td>
+        <td class="classSubject">科目</td>
+        <td class="classAttri">课程属性</td>
+        <td class="classSemester">所属学期</td>
+        <td class="classTeachers">任课教师</td>
+        <td class="classGrade">成绩</td>
+        <td class="classCredit">课程学分</td>
+        <td class="gainedCredit">已获学分</td>
+        <td class="rank">等级</td>
+        <td class="GPA">绩点</td>
       </tr>
       <tr>
-        <td colspan="5">
-          <span class="engStudentInfo">
-            <span> Entrance Date：Sep. 2019</span>
-            <span>Graduation Date(expected)：July 2022</span>
-          </span>
-        </td>
-      </tr>
-      <!-- grade 10 -->
-      <tr>
-        <th rowspan="2" class="subject">Subjects</th>
-        <th colspan="2" >1st Semester/10th</th>
-        <th colspan="2" >2nd Semester/10th</th>
-      </tr>
-      <tr>
-        <th >Content</th>
-        <th >Grade</th>
-        <th >Content</th>
-        <th >Grade</th>
+        <td>中国古典诗词欣赏</td>
+        <td>CM101</td>
+        <td rowspan="13">语言与文学</td>
+        <td>语文</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>涂梦纯</td>
+        <td>90.1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
       </tr>
       <tr>
-        <td rowspan="2" class="subject">English</td>
-        <td >Comprehensive English Course 1 (Required)</td>
-        <td >B</td>
-        <td >Comprehensive English Course 3 (Required)</td>
-        <td >C+</td>
+        <td>中外小说戏剧欣赏</td>
+        <td>CM102</td>
+        <td>语文</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>涂梦纯</td>
+        <td>89.7</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
       </tr>
       <tr>
-        <td >Comprehensive English Course 2 (Required)</td>
-        <td >C+</td>
-        <td >Comprehensive English Course 4 (Required)</td>
-        <td >B+</td>
+        <td>中国古代散文欣赏</td>
+        <td>CM103</td>
+        <td>语文</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>涂梦纯</td>
+        <td>93</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
       </tr>
       <tr>
-        <td rowspan="3" class="subject">Chinese</td>
-        <td >Chinese Classical Poetry</td>
-        <td >A</td>
-        <td >Ancient Chinese Prose</td>
-        <td >A+</td>
+        <td>中国现当代散文诗歌欣赏</td>
+        <td>CM104</td>
+        <td>语文</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>涂梦纯</td>
+        <td>89.8</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
       </tr>
       <tr>
-        <td rowspan="2" >
-          Chinese and Foreign Drama through Novel Study
-        </td>
-        <td rowspan="2">B+</td>
-        <td >
-          Contemporary Chinese Prose<span>&nbsp; </span>and Poetry
-        </td>
-        <td >A</td>
+        <td>《论语》研读</td>
+        <td>CM105</td>
+        <td>语文</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>涂梦纯</td>
+        <td>93.7</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
       </tr>
       <tr>
-       
-        <td >Creative Writing</td>
-        <td >B+</td>
+        <td>《说文解字》研究</td>
+        <td>CM106</td>
+        <td>语文</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>吴欣桐</td>
+        <td>94</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
       </tr>
       <tr>
+        <td>综合英语1</td>
+        <td>CM107</td>
+        <td>英语</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>孙亚梅</td>
+        <td>82.1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>综合英语2</td>
+        <td>CM108</td>
+        <td>英语</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>孙亚梅</td>
+        <td>75</td>
+        <td>2</td>
+        <td>2</td>
+        <td>C+</td>
+        <td>2.5</td>
+      </tr>
+      <tr>
+        <td>综合英语3</td>
+        <td>CM109</td>
+        <td>英语</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>孙亚梅</td>
+        <td>77.5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>C+</td>
+        <td>2.5</td>
+      </tr>
+      <tr>
+        <td>综合英语4</td>
+        <td>CM110</td>
+        <td>英语</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>孙亚梅</td>
+        <td>85</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>时文阅读—文化与教育</td>
+        <td>CM111</td>
+        <td>英语</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>徐柔</td>
+        <td>80.2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>英文写作（议论类）</td>
+        <td>CM112</td>
+        <td>英语</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>董芷卉</td>
+        <td>85.3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>创意写作工坊</td>
+        <td>CM113</td>
+        <td>研究性学习</td>
+        <td>校本选修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>李韧</td>
+        <td>87</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>函数上</td>
+        <td>CM114</td>
+        <td rowspan="6">数学</td>
+        <td>数学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>常青</td>
+        <td>99.2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>函数中（提高班）</td>
+        <td>CM115</td>
+        <td>数学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>常青</td>
+        <td>85.2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>几何与代数（上）（提高班）</td>
+        <td>CM116</td>
+        <td>数学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>张俊强</td>
+        <td>88.3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>概率与统计（上）（提高班）</td>
+        <td>CM117</td>
+        <td>数学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>赵春</td>
+        <td>92.6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>数列与立体几何</td>
+        <td>CM118</td>
+        <td>数学</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>常青</td>
+        <td>96.1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>概率统计</td>
+        <td>CM119</td>
+        <td>数学</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>宋士红</td>
+        <td>94.4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>政治必修2&amp;3</td>
+        <td>CM120</td>
         <td
-          rowspan="2"
-          class="subject"
+          rowspan="7"
         >
-          Math
+          人文与社会
         </td>
-        <td >Foundations of Functions</td>
-        <td >A+</td>
-        <td >
-          Statistics<span>&nbsp; </span>probability<span>&nbsp; </span>and<span
-            >&nbsp; </span
-          >complex numbers
+        <td>思想政治</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>常江</td>
+        <td>83.3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>政治必修1&amp;4</td>
+        <td>CM121</td>
+        <td>思想政治</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>常江</td>
+        <td>84.8</td>
+        <td>3</td>
+        <td>3</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>历史必修1</td>
+        <td>CM122</td>
+        <td>历史</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>张昊堃</td>
+        <td>82.8</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>历史必修2</td>
+        <td>CM123</td>
+        <td>历史</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>张昊堃</td>
+        <td>86.6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>B+</td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td>地理必修1</td>
+        <td>CM124</td>
+        <td>地理</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>林亚婷</td>
+        <td>91.5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>地理必修2</td>
+        <td>CM125</td>
+        <td>地理</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>丁磊磊</td>
+        <td>84.6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>地理选择性必修2</td>
+        <td>CM126</td>
+        <td>地理</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>孙婷</td>
+        <td>83.1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>力学必修1</td>
+        <td>CM127</td>
+        <td rowspan="11">科学</td>
+        <td>物理</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>徐军</td>
+        <td>90.8</td>
+        <td>3</td>
+        <td>3</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>力学必修2</td>
+        <td>CM128</td>
+        <td>物理</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>
+          金文力,任静静
         </td>
-        <td >A</td>
+        <td>91.8</td>
+        <td>3</td>
+        <td>3</td>
+        <td>A+</td>
+        <td>4.5</td>
       </tr>
       <tr>
-        <td >Trigonometric Functions</td>
-        <td >B</td>
-        <td >
-          Plane<span>&nbsp; </span>vectors<span>&nbsp; </span>and<span
-            >&nbsp; </span
-          >solid<span>&nbsp; </span>geometry
+        <td>物理必修3（提高班）</td>
+        <td>CM129</td>
+        <td>物理</td>
+        <td>国家必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>陈亮</td>
+        <td>91.7</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>物理选择性必修1（提高班）</td>
+        <td>CM130</td>
+        <td>物理</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>陈亮</td>
+        <td>91.6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>化学必修1</td>
+        <td>CM131</td>
+        <td>化学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>马葛</td>
+        <td>98.4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>化学必修2</td>
+        <td>CM132</td>
+        <td>化学</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>马葛</td>
+        <td>98.4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>化学选修1（提高班）</td>
+        <td>CM133</td>
+        <td>化学</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>魏丽</td>
+        <td>87.9</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>化学选修2（提高班）</td>
+        <td>CM134</td>
+        <td>化学</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>魏丽</td>
+        <td>92.5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>生物必修1</td>
+        <td>CM135</td>
+        <td>生物</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>张亚慧</td>
+        <td>94.3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>生物必修2</td>
+        <td>CM136</td>
+        <td>生物</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>尹佩佩</td>
+        <td>92.9</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>生物选择性必修1</td>
+        <td>CM137</td>
+        <td>生物</td>
+        <td>国家选择性必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>冀静</td>
+        <td>87.6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>创意编程俱乐部</td>
+        <td>CM138</td>
+        <td rowspan="3">技术</td>
+        <td>技术</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>刘宝艳</td>
+        <td>81.3</td>
+        <td>4</td>
+        <td>4</td>
+        <td>B</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>智能硬件俱乐部</td>
+        <td>CM139</td>
+        <td>技术</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>刘楠</td>
+        <td>90</td>
+        <td>4</td>
+        <td>4</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>航模比赛 自主项目实践课</td>
+        <td>CM140</td>
+        <td>技术</td>
+        <td>国家必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>
+          毛华均,冯浩东
         </td>
-        <td >A</td>
+        <td>93</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
       </tr>
       <tr>
-        <td rowspan="2" class="subject">Physics</td>
-        <td rowspan="2" >Physics: Mechanics - Required Course 1</td>
-        <td rowspan="2" >A</td>
-        <td rowspan="2" >Physics: Mechanics - Required course 2</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Chemistry</td>
-        <td rowspan="2" >Chemical Reaction（required）</td>
-        <td rowspan="2" >A+</td>
-        <td rowspan="2" >The Structure of Matter（required）</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Biology</td>
-        <td rowspan="2" >Molecular and Cellular Biology</td>
-        <td rowspan="2" >A+</td>
-        <td rowspan="2" >Heredity and Molecular Genetics</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Politics</td>
-        <td rowspan="2" >Economics, Politics and Law</td>
-        <td rowspan="2" >B+</td>
-        <td rowspan="2" >Philosophy and Chinese Culture</td>
-        <td rowspan="2" >B+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">History</td>
-        <td rowspan="2" >History of China</td>
-        <td rowspan="2" >B+</td>
-        <td rowspan="2" >World History</td>
-        <td rowspan="2" >B+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Geography</td>
-        <td rowspan="2" >The Fundamentals of Physical Geography</td>
-        <td rowspan="2" >A+</td>
-        <td rowspan="2" >Human Geography</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Technology</td>
-        <td rowspan="2" >Creative Coding</td>
-        <td rowspan="2" >B</td>
-        <td rowspan="2" >Intelligent Hardware</td>
-        <td rowspan="2" >A</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">PE</td>
-        <td rowspan="2" >Table Tennis（Junior Level)</td>
-        <td rowspan="2" >A</td>
-        <td rowspan="2" >Table Tennis （Junior Level)</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td rowspan="2" class="subject">Arts</td>
-        <td rowspan="2" >BDFZ House Drama Festival 2019</td>
-        <td rowspan="2" >A</td>
-        <td rowspan="2" >Drama Association (Primary)</td>
-        <td rowspan="2" >A+</td>
-      </tr>
-      <tr></tr>
-      <!-- grade 11 -->
-      <tr>
-        <th rowspan="2" class="subject">Subjects</th>
-        <th colspan="2" >1st Semester/10th</th>
-        <th colspan="2" >2nd Semester/10th</th>
-      </tr>
-      <tr>
-        <th >Content</th>
-        <th >Grade</th>
-        <th >Content</th>
-        <th >Grade</th>
-      </tr>
-      <tr>
-        <td
-          rowspan="2"
-          class="subject"
-          
-        >
-          English
+        <td>
+          <div>北大附中书院戏剧节-格物书院剧组
         </td>
-        <td >
-          Thematic English Reading Course-Culture &amp; Education
+        <td>CM141</td>
+        <td rowspan="3">艺术</td>
+        <td>艺术</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>王冰,曾涌麟</td>
+        <td>90</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>戏剧社团初级2（俱乐部课程）</td>
+        <td>CM142</td>
+        <td>艺术</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>王俊婷</td>
+        <td>95</td>
+        <td>4</td>
+        <td>4</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>吉他（社团课程）</td>
+        <td>CM143</td>
+        <td>艺术</td>
+        <td>国家必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>杨永喜</td>
+        <td>188</td>
+        <td>2</td>
+        <td>2</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>乒乓球俱乐部（初级）</td>
+        <td>CM144</td>
+        <td rowspan="3">体育与健康</td>
+        <td>体育</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>马达</td>
+        <td>91.6</td>
+        <td>4</td>
+        <td>4</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>乒乓球俱乐部3队</td>
+        <td>CM145</td>
+        <td>体育</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第二学期</td>
+        <td>马达</td>
+        <td>97.2</td>
+        <td>4</td>
+        <td>4</td>
+        <td>A+</td>
+        <td>4.5</td>
+      </tr>
+      <tr>
+        <td>乒乓球俱乐部3队</td>
+        <td>CM146</td>
+        <td>体育</td>
+        <td>国家必修</td>
+        <td>2020-2021学年第一学期</td>
+        <td>马达</td>
+        <td>90</td>
+        <td>4</td>
+        <td>4</td>
+        <td>A</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>军训(2022届)</td>
+        <td>CM147</td>
+        <td rowspan="3">
+          <div>综合实践活动
         </td>
-        <td >B</td>
-        <td ></td>
-        <td ></td>
+        <td>社会实践</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>夏一凡,曹乃文</td>
+        <td>100</td>
+        <td>2</td>
+        <td>2</td>
+        <td>通过</td>
+        <td>-</td>
       </tr>
       <tr>
-        <td >
-          English Writing Course-Argumentative Writing(Elective)
-        </td>
-        <td >B+</td>
-        <td ></td>
-        <td ></td>
+        <td>社会创新</td>
+        <td>CM148</td>
+        <td>研究性学习</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>方舟</td>
+        <td>78</td>
+        <td>3</td>
+        <td>3</td>
+        <td>通过</td>
+        <td>-</td>
       </tr>
       <tr>
-        <td
-          rowspan="2"
-          class="subject"
-          
-        >
-          Chinese
-        </td>
-        <td >
-          Critical Reading Course: Analyzing The Analects of Confucius
-        </td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
+        <td>公共说理</td>
+        <td>CM149</td>
+        <td>研究性学习</td>
+        <td>国家必修</td>
+        <td>2019-2020学年第一学期</td>
+        <td>孙玉磊,李亦辰</td>
+        <td>100</td>
+        <td>3</td>
+        <td>3</td>
+        <td>通过</td>
+        <td>-</td>
       </tr>
       <tr>
-        <td >Origin<span>&nbsp; </span>of Chinese Characters</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td
-          rowspan="2"
-          class="subject"
-          style="
-            border-right: 1px solid #000000;
-            border-bottom: 1px solid #000000;
-            height: 27.25pt;
-          "
-        >
-          Physics
-        </td>
-        <td >Physics 3</td>
-        <td >A+</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td >Physics Magnetism(elective)-HL</td>
-        <td >A+</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td
-          rowspan="2"
-          class="subject"
-          style="
-            border-right: 1px solid #000000;
-            border-bottom: 1px solid #000000;
-            height: 53.25pt;
-          "
-        >
-          Chemistry
-        </td>
-        <td >Applied Organic Chemistry（Higher Level)</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td >Chemistry and Technology(Higher Level)</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td class="subject">Biology</td>
-        <td >Homeostasis and Regulation</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr>
-        <td class="subject">Geography</td>
-        <td >Regional Sustainable Development</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr>
-        <td class="subject">Technology</td>
-        <td >Ship Model Competition Self-Conduct Project</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr>
-        <td class="subject">PE</td>
-        <td >Table Tennis Club Team 2</td>
-        <td >A</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr>
-        <td class="subject">Arts</td>
-        <td >Guitar Club</td>
-        <td >A+</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr>
-        <td rowspan="2" class="subject">Mathematics</td>
-        <td >Space vectors and analytic geometry</td>
-        <td >A+</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-      <tr>
-        <td >Random variables and distributions</td>
-        <td >A+</td>
-        <td ></td>
-        <td ></td>
-      </tr>
-
-      <tr class='credits'>
-        <td>Academic Credits</td>
-        <td>117</td>
+        <td class="gainedTotalCredit">已获总学分：</td>
+        <td colspan="3">117（学业学分 109 综合实践学分 8）</td>
+        <td class="TotalGPA">总绩点数：</td>
+        <td>425.5</td>
         <td></td>
-        <td>GPA</td>
-        <td>3.94</td>
+        <td colspan="5" class="average">平均绩点：3.94（总绩点数/学业学分）</td>
       </tr>
       <tr>
-        <td colspan="12" height="13px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
-        <td colspan="5" >
-            <span class="summary">
-          <span> Social Study(Credits)</span><span>Research(0) </span
-          ><span>Social Practice(0) </span> <span>Community Service(0)</span>
-        </td></span>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
-    
-      <tr height="0" style="display: none">
+      <tr>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="5" class="schoolName">北京大学附属中学</td>
       </tr>
-
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="5" class="createdTime">2021年02月06日</td>
+      </tr>
     </table>
   </body>
 </html>
